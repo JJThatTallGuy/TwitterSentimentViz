@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+    <body>
+        <div class="navdiv">
+            <ul class="nav">
+                <li><a href="../../index.html">Homepage</a></li>
+                <li><a href="accountfeed.html">Account Feed</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="nodegraph.html">Graph</a></li>
+                <!-- <li><a href="FollowFeed.html">Follow Feed</a></li> -->
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="cover">
+            <img id = "bannerpic" alt = "cover pic" height=200 width=750>
+            <img id = "profilepic" alt = "profile pic" height=200 width=200>
+        </div>
+        <div class="feed">
+            <!-- Load tweets in JavaScript and insert them here -->
+        </div>
+        <script src="../js/accountfeed.js"></script>
+        <input  id="newtweet" type="text" name="newtweet" size="140">
+        <button id="submit">tweet</button>
+        <script>
+            function postNewTweet() {
+                const tweet = document.createElement("div");
+                tweet.className = "tweet";
+                const text = document.createElement("p");
+                text.innerHTML = document.getElementById("newtweet").value;
+                tweet.appendChild(text);
+
+                const oldtweet = document.getElementsByClassName("tweet");
+                const feed = document.getElementsByClassName("feed")[0];
+                feed.insertBefore(tweet, oldtweet[0]);
+            }
+
+            const button = document.getElementById("submit");
+            button.addEventListener('click', postNewTweet, false);
+        </script>
+    </body>
+    <script src="../lib/jquery-3.1.1.js"></script>
+    <script src="../js/accountfeed.js"></script>
+</html>

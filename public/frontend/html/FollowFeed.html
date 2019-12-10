@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+    <body>
+        <div class="navdiv">
+            <ul class="nav">
+                <li><a href="../../index.html">Homepage</a></li>
+                <li><a href="accountfeed.html">Account Feed</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="nodegraph.html">Graph</a></li>
+                <li><a href="FollowFeed.html">Follow Feed</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="feed">
+            <div class="tweet">
+                <p>Today I got food at the mall</p>
+            </div>
+            <div class="tweet">
+                <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.</p>
+            </div>
+            <div class="tweet">
+                <p>Endgame is not the movie to go with anyone to watch tbh unless both of you have the same mission. 
+
+                    Only to actually watch the movie .  Don’t ask me any question, don’t hold my hand or rest on my chest . 
+                    
+                    Thanos must die , do u think we are playing here .</p>
+                </div>
+                <div class="tweet">
+                    <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.</p>
+                </div>
+                <div class="tweet">
+                    <p>Today I got food at the mall</p>
+                </div>
+                <div class = tweet>
+                    <p>Look at my new Dog</p>
+                </div>
+        </div>
+        <input  id="newtweet" type="text" name="newtweet" size="140">
+        <button id="submit">tweet</button>
+        <script>
+            function postNewTweet() {
+                const tweet = document.createElement("div");
+                tweet.className = "tweet";
+                const text = document.createElement("p");
+                text.innerHTML = document.getElementById("newtweet").value;
+                tweet.appendChild(text);
+
+                const oldtweet = document.getElementsByClassName("tweet");
+                const feed = document.getElementsByClassName("feed")[0];
+                feed.insertBefore(tweet, oldtweet[0]);
+            }
+
+            const button = document.getElementById("submit");
+            button.addEventListener('click', postNewTweet, false);
+        </script>
+    </body>
+    <script src="../js/followfeed.js"></script>
+</html>
